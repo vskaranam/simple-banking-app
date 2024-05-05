@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(url = "http://customer-svc:9090")
+@FeignClient(url = "http://customer-svc:9090", value="customer-service")
 public interface CustomerRestClient {
 
     /**
