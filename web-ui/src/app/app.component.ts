@@ -23,10 +23,10 @@ export class AppComponent implements OnInit{
     this.searchFormGroup=this.fb.group({
       keyword : this.fb.control('')
     });
-    this.authService.loadToken();
-    if (this.authService.getToken()==null || this.authService.isTokenExpired()){
-      this.router.navigate(['/login']).then();
-    }
+    // this.authService.loadToken();
+    // if (this.authService.getToken()==null || this.authService.isTokenExpired()){
+    //   this.router.navigate(['/login']).then();
+    // }
   }
 
   onLogout() :void{

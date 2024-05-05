@@ -11,9 +11,9 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql  # Mount a volume for MySQL data on the host
 
-  account-app:
-    image: saikaranam/account-app:latest # This is the image of spring-boot app pulling from docker-hub repo
-    container_name: account-container
+  all-application-app:
+    image: saikaranam/all-application-app:latest # This is the image of spring-boot app pulling from docker-hub repo
+    container_name: all-application-container
     depends_on:
       - mysql
     ports:

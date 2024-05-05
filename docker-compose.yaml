@@ -39,7 +39,22 @@ services:
     volumes:
       - customer_data:/app/data  # Mount a volume for application data
 
+  operation-app:
+    image: saikaranam/operation-app:latest # This is the image of spring-boot app pulling from docker-hub repo
+    container_name: operation-container
+    depends_on:
+      - mysql
+    ports:
+      - "9070:9070"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/message_db
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    volumes:
+      - operation_data:/app/data  # Mount a volume for application data
+
 volumes:
   mysql_data:  # Define the volume for MySQL data
   account_data:  # Define the volume for application data
   customer_data:  # Define the volume for application data
+  customer_data:

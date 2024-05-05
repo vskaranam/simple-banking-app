@@ -11,20 +11,20 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql  # Mount a volume for MySQL data on the host
 
-  backend-demo-app:
-    image: zees007/backend-demo-app:latest # This is the image of spring-boot app pulling from docker-hub repo
-    container_name: backend-demo-container
+  account-app:
+    image: saikaranam/all-application-app:latest # This is the image of spring-boot app pulling from docker-hub repo
+    container_name: all-application-container
     depends_on:
       - mysql
     ports:
-      - "9090:9090"
+      - "9060:9060"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/message_db
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
     volumes:
-      - backend_data:/app/data  # Mount a volume for application data
+      - all_application_data:/app/data  # Mount a volume for application data
 
 volumes:
   mysql_data:  # Define the volume for MySQL data
-  backend_data:  # Define the volume for application data
+  all_application_data:

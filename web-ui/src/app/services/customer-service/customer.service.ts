@@ -10,14 +10,14 @@ import {AuthService} from "../auth-service/auth.service";
 })
 export class CustomerService {
 
-  private host: string = 'http://localhost:8888/CUSTOMER-SERVICE/bank/v2/customers';
+  private host: string = 'http://34.171.17.158:30005/v2/customers';
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
   private getHeader() :HttpHeaders {
-    let jwt: string = this.authService.getToken();
-    jwt = "Bearer "+jwt;
-    return new HttpHeaders({"Authorization": jwt});
+    // let jwt: string = this.authService.getToken();
+    // jwt = "Bearer "+jwt;
+    return new HttpHeaders({"access-control-allow-origin": "*"});
   }
 
   public getById(id: string) :Observable<CustomerModel>{
