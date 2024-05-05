@@ -17,7 +17,7 @@ public class AccountRestController {
     private  AccountService accountService;
 	
 	@Autowired
-	private RestConsumerInterface rci; // Proxy
+	private CustomerRestClient rci; // Proxy
 
 	@GetMapping("/hello")
 	public String getHello() {
