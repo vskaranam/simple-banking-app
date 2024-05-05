@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-@EnableFeignClients
 @EnableDiscoveryClient
 public class OperationServiceApplication {
 
